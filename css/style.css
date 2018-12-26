@@ -1,0 +1,277 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-x: hidden;
+}
+header{
+    padding: 34px 0;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+.logo{
+	/*background-color: black;*/
+	margin-left: 100px;
+	margin-top: 22px;
+	/*width: 80px;*/
+	height: 21px;
+}
+.elements{
+	list-style-type: none;
+	margin-right: 39px;
+	margin-top: 22px;
+    /*width: 192px;*/
+	/*height: 19px;*/
+}
+p{
+	text-align: center;
+}
+.elements{
+	display: flex;
+}
+.elements a{
+	color: white;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.hero-content{
+	max-width: 100%;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.hero-text{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.hero-img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	position: relative;
+	z-index: -1;
+}
+.hero-content::before{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #181818;
+	position: absolute;
+	opacity: 0.6;
+}
+.hero-content::after{
+	content: url(../img/one.png);
+	display: block;
+	width: 200px;
+	height: 261px;
+	position: absolute;
+	right: 0;
+	z-index: 3;
+	bottom: -100px;
+}
+.hero-title{
+	font-size: 50px;
+	color: #FFFFFF;
+}
+.hero-para{
+	font-size: 14px;
+	color:#FFFFFF;
+	padding-top: 15px;
+}
+.hero-link{
+	width: 164px;
+	height: 46px;
+	text-align: center;
+	background: #BADC58;
+	line-height: 46px;
+	color: black;
+	border-radius: 10px;
+	margin-top: 50px;
+}
+.hero-scroll{
+	width: 3px;
+	height: 60px;
+	margin-top: 90px;
+	color: #FFFFFF;
+	position: relative;
+	background: grey;
+
+}
+.hero-scroll:before {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 0;
+	width: 100%;
+	background: white;
+	animation-name: scroll;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes  scroll {
+		from{height:0;}
+		to{height: 100%;}
+	}
+
+	
+
+
+}
+.products{
+	background-color: #ffffff;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	position: relative;
+	width: 1084px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.products::before{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 53px;
+	background-color: #ffffff;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	position: absolute;
+	top: -53px;
+	left: 0;
+}
+.products::after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 60px;
+	background-color: #ffffff;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	position: absolute;
+	bottom: -60px;
+	left: 0;
+}
+.product-list{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.product-list li{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+h3{
+	position: relative;
+}
+.product-list button{
+	width: 164px;
+	height: 46px;
+	background-color: #BADC58;
+	border-radius: 10px;
+}
+.show-info{
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background-image: url(../img/info.svg);
+	top: -15px;
+}
+.info{
+	position: absolute;
+	width: 240px;
+	height: 150px;
+	background-color: #BADC58;
+	border-radius: 20px;
+	/*display: flex;*/
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.info.active{
+	display: flex;
+}
+.info::after{
+	content: "";
+	display: block;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: #BADC58;
+	bottom: -8px;
+	right: 15px;
+	transform: rotate(45deg);
+	z-index: 0;
+}
+.info p{
+	font-size: 10px;
+}
+.span{
+	color: white; 
+	font-size: 22px;
+}
+footer{
+	height: 260px;
+	position: relative;
+	background-color: black;
+	z-index: -1;
+}
+
+.line{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 50px;
+
+}
+.page{
+	display: flex;
+	justify-content: space-around;
+}
+
+@media only screen and (min-width: 320px){
+	footer{
+		width: 100vw;
+	}
+	header, .products{
+		width: calc(100vw - 42px);
+	}
+	.product-list li{
+		width: calc(100% - 20px);
+	}
+}
+
+
+@media only screen and (min-width: 768px){
+    .product-list li{
+		width: calc(50% - 20px);
+	}
+}
+
+
+@media only screen and (min-width: 1084px){
+	header, .products {
+		width: 1084px;
+	}
+	.product-list li{
+		width: calc((100% / 3) - 20px);
+	}
+}
